@@ -5,4 +5,5 @@ public class Car {
 	public String type = "Sedan";
 	public boolean isDiesel = false;
 	public TireSensor tireSensor = new TireSensor();
+	public float fuelLevel;
 }

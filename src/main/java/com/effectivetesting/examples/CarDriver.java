@@ -11,6 +11,13 @@ public class CarDriver {
 				System.out.println("Tire pressure level: normal");
 			}
 		}
+		
+		myCar.fuelLevel = 15.0f;
+		
+		while(myCar.fuelLevel > 0) {
+			System.out.println("Engine working. Fuel level: " + Float.toString(myCar.fuelLevel));
+			myCar.fuelLevel -= 0.5f;
+		}
 
 	}
 }
