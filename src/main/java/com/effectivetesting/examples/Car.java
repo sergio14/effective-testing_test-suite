@@ -1,24 +1,16 @@
 package com.effectivetesting.examples;
 
-public class Car {
-	private int rpm;
+public class Car extends MotorVehicle {
 	private Transmission transmission;
 	private String message = "Current Gear: ";
 	
-    public Car() {
-    	rpm = 0;
-    	transmission = new AutomaticTransmission();
+	public Car() {
+		transmission = new AutomaticTransmission();
 	}
-	
-	public int getCurrentRmp() {
-		return rpm;
+	public String getType() {
+		return "sedan";
 	}
-	
-	public void startEngine() {
-		rpm = 1000;
-		System.out.println("Engine started.");
-	}
-
+    
 	public void goForward() {
 		transmission.setMode("DRIVE");
 		System.out.println("Going forward. " + message + transmission.showCurrentGear());
