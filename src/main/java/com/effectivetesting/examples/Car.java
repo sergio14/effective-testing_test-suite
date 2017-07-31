@@ -20,15 +20,12 @@ public class Car {
 	}
 
 	public void goForward() {
-		transmission.gearUp();
+		transmission.setMode("DRIVE");
 		System.out.println("Going forward. " + message + transmission.showCurrentGear());
 	}
 	
 	public void accelerate(int rpm) {
-		this.rpm = rpm;
-		if (rpm > 2000) {
-			transmission.gearUp();
-			System.out.println("Accelerating: " + rpm + " rpms." + message + transmission.showCurrentGear());
-		}
+		transmission.gearUp();
+		System.out.println("Accelerating: " + rpm + " rpms. " + message + transmission.showCurrentGear());
 	}
 }

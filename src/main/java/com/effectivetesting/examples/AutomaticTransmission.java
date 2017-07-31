@@ -2,15 +2,24 @@ package com.effectivetesting.examples;
 
 public class AutomaticTransmission implements Transmission {
 	private int currentGear;
+	private String mode;
 	private int maxGear = 6;
 	
 	public AutomaticTransmission() {
 		currentGear = 0;
+		mode = "NEUTRAL";
+	}
+	
+	public void setMode(String mode) {
+		this.mode = mode;
+		this.gearUp();
 	}
 	
 	public void gearUp() {
 		if(currentGear < maxGear) {
-			currentGear = currentGear + 1;
+			if (mode == "DRIVE") {
+				currentGear = currentGear + 1;
+			}
 		}
 	}
 
