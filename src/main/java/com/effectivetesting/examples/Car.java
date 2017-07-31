@@ -1,10 +1,13 @@
 package com.effectivetesting.examples;
 
 public class Car {
-	private int rpm;	
+	private int rpm;
+	private Transmission transmission;
+	private String message = "Current Gear: ";
 	
     public Car() {
     	rpm = 0;
+    	transmission = new AutomaticTransmission();
 	}
 	
 	public int getCurrentRmp() {
@@ -14,5 +17,18 @@ public class Car {
 	public void startEngine() {
 		rpm = 1000;
 		System.out.println("Engine started.");
+	}
+
+	public void goForward() {
+		transmission.gearUp();
+		System.out.println("Going forward. " + message + transmission.showCurrentGear());
+	}
+	
+	public void accelerate(int rpm) {
+		this.rpm = rpm;
+		if (rpm > 2000) {
+			transmission.gearUp();
+			System.out.println("Accelerating: " + rpm + " rpms." + message + transmission.showCurrentGear());
+		}
 	}
 }
