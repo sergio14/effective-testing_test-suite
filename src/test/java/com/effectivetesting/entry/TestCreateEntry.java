@@ -14,8 +14,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.effectivetesting.pageobject.EntryPageObject;
-import com.effectivetesting.pageobject.HomePageObject;
 import com.effectivetesting.pageobject.LoginPageObject;
 
 public class TestCreateEntry {
@@ -25,13 +23,11 @@ public class TestCreateEntry {
 	@Test
 	public void postIsSuccessfull() {
 		loginPage = new LoginPageObject(driver);
-		HomePageObject homePage = loginPage.login("admin1@gmail.com", "admin1");
-		
-		EntryPageObject entryPage = homePage.goToCreateEntry();
-		entryPage.createEntry("My newest post", "This is a post.");
-		
-		String currentMessage = entryPage.getResultMessage();
-		System.out.println(currentMessage);
+		String currentMessage = loginPage
+				.login("admin1@gmail.com", "admin1")
+				.goToCreateEntry()
+				.createEntry("My newest post", "This is a post.")
+				.getResultMessage();
 		
 		assertTrue(currentMessage.contains("Entry 'My newest post' created successfully."));
 	}
