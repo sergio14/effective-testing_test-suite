@@ -15,4 +15,8 @@ public class HomePageObject {
 		
 		return new EntryPageObject(driver);
 	}
+
+	public String getStatusMessage() {
+		return driver.findElement(By.xpath("//*[@id=\"notification\"]/span")).getText();
+	}
 }
