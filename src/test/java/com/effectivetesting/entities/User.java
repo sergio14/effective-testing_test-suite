@@ -1,11 +1,12 @@
 package com.effectivetesting.entities;
 
 public class User {
+
 	private String id;
 	private String email;
 	private String password_hash;
 	private String name;
-	
+
 	public String getId() {
 		return id;
 	}
