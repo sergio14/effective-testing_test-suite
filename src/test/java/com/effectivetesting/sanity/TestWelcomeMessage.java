@@ -15,7 +15,7 @@ public class TestWelcomeMessage {
 	 
 	@Before
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/home/sergio/Documents/JAVA_TESTING/chrome_driver/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("localhost:5000");
